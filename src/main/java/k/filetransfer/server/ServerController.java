@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,11 +33,13 @@ public class ServerController {
             log.debug("file content type = {}", file.getContentType());
             try {
                 String SAVE_PATH = "/Users/hosuk/k-filetransfer-server/";
-                File saveFile = new File(SAVE_PATH + file.getOriginalFilename()); //
+                File saveFile = new File(
+                SAVE_PATH
+                        + file.getOriginalFilename()
+                        + "."
+                        + LocalDateTime.now().format( DateTimeFormatter.ofPattern("yyyyMMddHHmmss"))
+                );
                 file.transferTo(saveFile);
-//                try ( OutputStream os = new FileOutputStream(saveFile) ) {
-//                    os.write(file.getBytes());
-//                }
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

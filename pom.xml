@@ -10,7 +10,7 @@
   </parent>
   <groupId>com.k</groupId>
   <artifactId>k-filetransfer</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.9.0</version>
   <name>k-filetransfer-server</name>
   <description>docker build</description>
   <properties>
