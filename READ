@@ -1,0 +1,13 @@
+CMD 키워드도 무조건 한번만 사용할 수 있다.
+여기에서는 mvnw(maven wrapper) 를 통해서 해당 프로젝트를 빌드를 한다 .
+ARG 키워드는 Argument로 JAR_FILE_PATH 라는 변수명에 target/*.jar 경로를 담았다.
+COPY키워드는 위에서 할당한 변수명을 app.jar이름으로 복사했다.
+ENTRYPOINT 는 java를 실행하는 parameter를 담았다.
+
+https://docs.docker.com/engine/reference/builder/
+추가로 Spring Boot 진영에서 Dockerfile에 대해서 포스팅한 글이 있다. 더 다채롭게? 다양하게 JAVA_OPTION 이라든지, shell script로 실행한다든지, 다양한 방법들이 존재한다. 아래 사이트에서 확인하자! https://spring.io/guides/topicals/spring-boot-docker
+
+
+# 확인가능
+docker images
+
