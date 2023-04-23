@@ -32,12 +32,13 @@ public class ServerController {
             log.debug("file org name = {}", file.getOriginalFilename());
             log.debug("file content type = {}", file.getContentType());
             try {
-                String SAVE_PATH = "/Users/hosuk/k-filetransfer-server/";
+                String SAVE_PATH = "C:/Users/hosuk/cop";
                 File saveFile = new File(
-                SAVE_PATH
+                        SAVE_PATH
+                        + File.separator
                         + file.getOriginalFilename()
-                        + "."
-                        + LocalDateTime.now().format( DateTimeFormatter.ofPattern("yyyyMMddHHmmss"))
+                        // + "."
+                        // + LocalDateTime.now().format( DateTimeFormatter.ofPattern("yyyyMMddHHmmss"))
                 );
                 file.transferTo(saveFile);
             } catch (IOException e) {
